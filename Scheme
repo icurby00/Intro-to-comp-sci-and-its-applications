@@ -1,0 +1,23 @@
+(and expr1 expr2 ... expr-n)   
+; return true if all the expr's are true
+; ... or more precisely, return expr-n if all the expr's evaluate to
+; something other than #f.  Otherwise return #f
+
+(and (equal? 2 3) (equal? 2 2) #t)  => #f
+
+(or expr1 expr2 ... expr-n)   
+; return true if at least one of the expr's is true
+; ... or more precisely, return expr-j if expr-j is the first expr that
+; evaluates to something other than #f.  Otherwise return #f.
+
+(or (equal? 2 3) (equal? 2 2) #t)  => #t
+
+(or (equal? 2 3) 'fred (equal? 3 (/ 1 0)))  => 'fred
+
+(define (single-digit x)
+   (and (> x 0) (< x 10)))
+
+(not expr)   
+; return true if expr is false
+
+(not (= 10 20))     => #t
