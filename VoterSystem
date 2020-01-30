@@ -1,0 +1,24 @@
+import csv
+
+
+with open('C:\\Users\\icurb\\Documents\\GitHub\\votingSystem\\GSUCandidates.txt',"r") as GSU_Candidate_txt:
+     csv_reader = csv.reader(GSU_Candidate_txt, delimiter=',')
+print('please select your choose GSU Candidate to write job description ')
+
+def selectgsu():
+     print("Write GSU candidate below")
+     input()
+
+
+selectgsu()
+def job():
+     print("write job descirption for GSU Candidate below")
+     input()
+job()
+
+f = open('GSU_Job_Descriptions.txt','x')
+f.write("gsucand" )
+f.write("description")
+f.write("line 1/n")
+f.write("line 2/n")
+f.close()
